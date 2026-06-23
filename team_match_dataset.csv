@@ -1,0 +1,397 @@
+torneo,fase,match_id,equipo,rival,pos_h1,rem_h1,arco_h1,xg_h1,goles_h1,pos_diff,rem_diff,arco_diff,xg_diff,estado_ht,resultado_ft
+Mundial 2022,Grupos,3857271,England,Iran,81.5,7,4,0.731,3,63.0,6,4,0.618,Lead,W
+Mundial 2022,Grupos,3857271,Iran,England,18.5,1,0,0.112,0,-63.0,-6,-4,-0.618,Trail,L
+Mundial 2022,Grupos,3857273,Wales,Iran,64.3,4,2,0.204,0,28.6,-1,0,-0.018,Level,L
+Mundial 2022,Grupos,3857273,Iran,Wales,35.7,5,2,0.222,0,-28.6,1,0,0.018,Level,W
+Mundial 2022,Grupos,3857296,Croatia,Belgium,47.1,6,0,0.346,0,-5.8,1,0,-0.057,Level,D
+Mundial 2022,Grupos,3857296,Belgium,Croatia,52.9,5,0,0.403,0,5.8,-1,0,0.057,Level,D
+Mundial 2022,Grupos,3857274,Netherlands,Ecuador,49.4,1,1,0.059,1,-1.2,-6,0,-0.369,Lead,D
+Mundial 2022,Grupos,3857274,Ecuador,Netherlands,50.6,7,1,0.429,0,1.2,6,0,0.369,Trail,D
+Mundial 2022,Grupos,3857276,Canada,Morocco,51.1,2,0,0.318,0,2.2,-5,-2,-0.108,Trail,L
+Mundial 2022,Grupos,3857276,Morocco,Canada,48.9,7,2,0.426,2,-2.2,5,2,0.108,Lead,W
+Mundial 2022,Grupos,3857261,Wales,England,26.3,2,0,0.064,0,-47.4,-7,-2,-0.469,Level,L
+Mundial 2022,Grupos,3857261,England,Wales,73.7,9,2,0.532,0,47.4,7,2,0.469,Level,W
+Mundial 2022,Grupos,3857290,Switzerland,Cameroon,51.4,3,0,0.358,0,2.8,-2,-2,0.049,Level,W
+Mundial 2022,Grupos,3857290,Cameroon,Switzerland,48.6,5,2,0.309,0,-2.8,2,2,-0.049,Level,L
+Mundial 2022,Grupos,3857277,Morocco,Croatia,41.1,5,0,0.221,0,-17.8,1,-1,-0.379,Level,D
+Mundial 2022,Grupos,3857277,Croatia,Morocco,58.9,4,1,0.6,0,17.8,-1,1,0.379,Level,D
+Mundial 2022,Grupos,3857272,England,United States,62.3,5,1,0.326,0,24.6,-1,0,-0.055,Level,D
+Mundial 2022,Grupos,3857272,United States,England,37.7,6,1,0.381,0,-24.6,1,0,0.055,Level,D
+Mundial 2022,Grupos,3857275,Tunisia,France,44.8,3,2,0.128,0,-10.4,1,2,-0.001,Level,W
+Mundial 2022,Grupos,3857275,France,Tunisia,55.2,2,0,0.129,0,10.4,-1,-2,0.001,Level,L
+Mundial 2022,Grupos,3857298,Portugal,Ghana,69.1,7,2,0.917,0,38.2,7,2,0.917,Level,W
+Mundial 2022,Grupos,3857298,Ghana,Portugal,30.9,0,0,0.0,0,-38.2,-7,-2,-0.917,Level,L
+Mundial 2022,Grupos,3857255,Japan,Spain,18.4,2,0,0.076,0,-63.2,-3,-3,-0.557,Trail,W
+Mundial 2022,Grupos,3857255,Spain,Japan,81.6,5,3,0.632,1,63.2,3,3,0.557,Lead,L
+Mundial 2022,Grupos,3857285,Senegal,Netherlands,46.5,6,1,0.193,0,-7.0,1,1,-0.087,Level,L
+Mundial 2022,Grupos,3857285,Netherlands,Senegal,53.5,5,0,0.28,0,7.0,-1,-1,0.087,Level,W
+Mundial 2022,Grupos,3857282,United States,Wales,66.5,3,1,0.461,1,33.0,1,1,0.303,Lead,D
+Mundial 2022,Grupos,3857282,Wales,United States,33.5,2,0,0.158,0,-33.0,-1,-1,-0.303,Trail,D
+Mundial 2022,Grupos,3857297,Poland,Saudi Arabia,41.0,3,1,0.32,1,-18.0,-2,-2,-0.916,Lead,W
+Mundial 2022,Grupos,3857297,Saudi Arabia,Poland,59.0,5,3,1.236,0,18.0,2,2,0.916,Trail,L
+Mundial 2022,Grupos,3857278,Iran,United States,40.2,0,0,0.0,0,-19.6,-9,-3,-0.975,Trail,L
+Mundial 2022,Grupos,3857278,United States,Iran,59.8,9,3,0.975,1,19.6,9,3,0.975,Lead,W
+Mundial 2022,Grupos,3857294,Netherlands,Qatar,69.1,10,2,0.719,1,38.2,7,0,0.606,Lead,W
+Mundial 2022,Grupos,3857294,Qatar,Netherlands,30.9,3,2,0.113,0,-38.2,-7,0,-0.606,Trail,L
+Mundial 2022,Grupos,3857284,Germany,Japan,81.2,14,5,1.571,1,62.4,13,5,1.494,Lead,L
+Mundial 2022,Grupos,3857284,Japan,Germany,18.8,1,0,0.077,0,-62.4,-13,-5,-1.494,Trail,W
+Mundial 2022,Grupos,3857254,Denmark,Tunisia,60.8,3,2,0.16,0,21.6,-5,1,-0.593,Level,D
+Mundial 2022,Grupos,3857254,Tunisia,Denmark,39.2,8,1,0.753,0,-21.6,5,-1,0.593,Level,D
+Mundial 2022,Grupos,3857301,Qatar,Senegal,38.2,2,0,0.029,0,-23.6,-4,-2,-0.515,Trail,L
+Mundial 2022,Grupos,3857301,Senegal,Qatar,61.8,6,2,0.544,1,23.6,4,2,0.515,Lead,W
+Mundial 2022,Grupos,3857266,France,Denmark,48.9,13,2,0.766,0,-2.2,11,2,0.711,Level,W
+Mundial 2022,Grupos,3857266,Denmark,France,51.1,2,0,0.055,0,2.2,-11,-2,-0.711,Level,L
+Mundial 2022,Grupos,3857265,Mexico,Poland,61.0,5,1,0.316,0,22.0,4,1,0.259,Level,D
+Mundial 2022,Grupos,3857265,Poland,Mexico,39.0,1,0,0.057,0,-22.0,-4,-1,-0.259,Level,D
+Mundial 2022,Grupos,3857269,Brazil,Switzerland,54.0,6,2,0.454,0,8.0,5,2,0.403,Level,W
+Mundial 2022,Grupos,3857269,Switzerland,Brazil,46.0,1,0,0.051,0,-8.0,-5,-2,-0.403,Level,L
+Mundial 2022,Grupos,3857292,Costa Rica,Germany,29.6,1,1,0.141,0,-40.8,-11,-3,-1.002,Trail,L
+Mundial 2022,Grupos,3857292,Germany,Costa Rica,70.4,12,4,1.143,1,40.8,11,3,1.002,Lead,W
+Mundial 2022,Grupos,3857268,Belgium,Canada,55.5,4,2,0.395,1,11.0,-10,0,-1.618,Lead,W
+Mundial 2022,Grupos,3857268,Canada,Belgium,44.5,14,2,2.013,0,-11.0,10,0,1.618,Trail,L
+Mundial 2022,Grupos,3857295,Japan,Costa Rica,42.7,2,0,0.047,0,-14.6,-1,0,-0.032,Level,L
+Mundial 2022,Grupos,3857295,Costa Rica,Japan,57.3,3,0,0.079,0,14.6,1,0,0.032,Level,W
+Mundial 2022,Eliminación,3869321,Netherlands,Argentina,56.8,1,0,0.09,0,13.6,-4,-3,-0.49,Trail,D
+Mundial 2022,Eliminación,3869321,Argentina,Netherlands,43.2,5,3,0.58,1,-13.6,4,3,0.49,Lead,D
+Mundial 2022,Eliminación,3869684,Croatia,Morocco,58.5,8,4,0.543,2,17.0,4,3,-0.023,Lead,W
+Mundial 2022,Eliminación,3869684,Morocco,Croatia,41.5,4,1,0.566,1,-17.0,-4,-3,0.023,Trail,L
+Mundial 2022,Grupos,3857257,Australia,Denmark,35.3,4,3,0.098,0,-29.4,-1,1,-0.248,Level,W
+Mundial 2022,Grupos,3857257,Denmark,Australia,64.7,5,2,0.346,0,29.4,1,-1,0.248,Level,L
+Mundial 2022,Eliminación,3869151,Argentina,Australia,60.5,2,1,0.078,1,21.0,1,1,0.01,Lead,W
+Mundial 2022,Eliminación,3869151,Australia,Argentina,39.5,1,0,0.068,0,-21.0,-1,-1,-0.01,Trail,L
+Mundial 2022,Eliminación,3869685,Argentina,France,59.8,6,3,1.292,2,19.6,6,3,1.292,Lead,D
+Mundial 2022,Eliminación,3869685,France,Argentina,40.2,0,0,0.0,0,-19.6,-6,-3,-1.292,Trail,D
+Mundial 2022,Grupos,3857258,Brazil,Serbia,58.4,5,3,0.245,0,16.8,4,3,0.219,Level,W
+Mundial 2022,Grupos,3857258,Serbia,Brazil,41.6,1,0,0.026,0,-16.8,-4,-3,-0.219,Level,L
+Mundial 2022,Grupos,3857267,Ecuador,Senegal,51.2,2,0,0.05,0,2.4,-8,-1,-1.347,Trail,L
+Mundial 2022,Grupos,3857267,Senegal,Ecuador,48.8,10,1,1.397,1,-2.4,8,1,1.347,Lead,W
+Mundial 2022,Grupos,3857256,Serbia,Switzerland,51.6,7,4,0.994,2,3.2,-2,-1,-0.864,Level,L
+Mundial 2022,Grupos,3857256,Switzerland,Serbia,48.4,9,5,1.859,2,-3.2,2,1,0.864,Level,W
+Mundial 2022,Eliminación,3869486,Morocco,Portugal,33.3,7,2,0.548,1,-33.4,2,1,0.336,Lead,W
+Mundial 2022,Eliminación,3869486,Portugal,Morocco,66.7,5,1,0.212,0,33.4,-2,-1,-0.336,Trail,L
+Mundial 2022,Grupos,3857260,Saudi Arabia,Mexico,33.2,4,1,0.245,0,-33.6,-7,-2,-0.735,Level,L
+Mundial 2022,Grupos,3857260,Mexico,Saudi Arabia,66.8,11,3,0.98,0,33.6,7,2,0.735,Level,W
+Mundial 2022,Grupos,3857287,Uruguay,South Korea,48.5,4,1,0.205,0,-3.0,2,1,-0.125,Level,D
+Mundial 2022,Grupos,3857287,South Korea,Uruguay,51.5,2,0,0.33,0,3.0,-2,-1,0.125,Level,D
+Mundial 2022,Grupos,3857289,Argentina,Mexico,66.3,1,0,0.138,0,32.6,-2,-1,-0.028,Level,W
+Mundial 2022,Grupos,3857289,Mexico,Argentina,33.7,3,1,0.166,0,-32.6,2,1,0.028,Level,L
+Mundial 2022,Eliminación,3869118,England,Senegal,65.0,4,2,0.606,2,30.0,1,1,-0.112,Lead,W
+Mundial 2022,Eliminación,3869118,Senegal,England,35.0,3,1,0.718,0,-30.0,-1,-1,0.112,Trail,L
+Mundial 2022,Eliminación,3869254,Portugal,Switzerland,52.9,6,5,0.672,2,5.8,2,3,0.268,Lead,W
+Mundial 2022,Eliminación,3869254,Switzerland,Portugal,47.1,4,2,0.405,0,-5.8,-2,-3,-0.268,Trail,L
+Mundial 2022,Grupos,3857264,Poland,Argentina,34.3,2,0,0.127,0,-31.4,-11,-8,-1.598,Level,L
+Mundial 2022,Grupos,3857264,Argentina,Poland,65.7,13,8,1.725,0,31.4,11,8,1.598,Level,W
+Mundial 2022,Eliminación,3869354,England,France,57.8,5,3,0.391,0,15.6,2,1,0.08,Trail,L
+Mundial 2022,Eliminación,3869354,France,England,42.2,3,2,0.311,1,-15.6,-2,-1,-0.08,Lead,W
+Mundial 2022,Eliminación,3869519,Argentina,Croatia,38.9,5,4,1.269,2,-22.2,1,4,1.116,Lead,W
+Mundial 2022,Eliminación,3869519,Croatia,Argentina,61.1,4,0,0.153,0,22.2,-1,-4,-1.116,Trail,L
+Mundial 2022,Grupos,3857288,Tunisia,Australia,48.7,4,0,0.516,0,-2.6,-3,-2,0.26,Trail,L
+Mundial 2022,Grupos,3857288,Australia,Tunisia,51.3,7,2,0.256,1,2.6,3,2,-0.26,Lead,W
+Mundial 2022,Eliminación,3869220,Morocco,Spain,32.9,3,1,0.317,0,-34.2,2,1,0.291,Level,D
+Mundial 2022,Eliminación,3869220,Spain,Morocco,67.1,1,0,0.026,0,34.2,-2,-1,-0.291,Level,D
+Mundial 2022,Eliminación,3869552,France,Morocco,43.3,9,1,0.943,1,-13.4,4,-1,0.743,Lead,W
+Mundial 2022,Eliminación,3869552,Morocco,France,56.7,5,2,0.2,0,13.4,-4,1,-0.743,Trail,L
+Mundial 2022,Eliminación,3869420,Croatia,Brazil,49.0,3,0,0.229,0,-2.0,-2,-3,0.086,Level,D
+Mundial 2022,Eliminación,3869420,Brazil,Croatia,51.0,5,3,0.142,0,2.0,2,3,-0.086,Level,D
+Mundial 2022,Eliminación,3869152,France,Poland,55.9,8,5,0.678,1,11.8,0,4,0.074,Lead,W
+Mundial 2022,Eliminación,3869152,Poland,France,44.1,8,1,0.603,0,-11.8,0,-4,-0.074,Trail,L
+Mundial 2022,Eliminación,3869219,Japan,Croatia,41.4,3,1,0.662,1,-17.2,0,0,0.363,Lead,D
+Mundial 2022,Eliminación,3869219,Croatia,Japan,58.6,3,1,0.299,0,17.2,0,0,-0.363,Trail,D
+Mundial 2022,Grupos,3857263,Spain,Germany,67.6,4,1,0.171,0,35.2,1,0,0.126,Level,D
+Mundial 2022,Grupos,3857263,Germany,Spain,32.4,3,1,0.044,0,-35.2,-1,0,-0.126,Level,D
+Mundial 2022,Eliminación,3869253,Brazil,South Korea,56.9,10,6,2.472,4,13.8,6,3,2.405,Lead,W
+Mundial 2022,Eliminación,3869253,South Korea,Brazil,43.1,4,3,0.067,0,-13.8,-6,-3,-2.405,Trail,L
+Mundial 2022,Grupos,3857283,Belgium,Morocco,70.0,6,2,0.466,0,40.0,3,2,0.347,Level,L
+Mundial 2022,Grupos,3857283,Morocco,Belgium,30.0,3,0,0.119,0,-40.0,-3,-2,-0.347,Level,W
+Mundial 2022,Grupos,3857270,Portugal,Uruguay,69.1,8,0,0.219,0,38.2,4,-1,-0.44,Level,W
+Mundial 2022,Grupos,3857270,Uruguay,Portugal,30.9,4,1,0.659,0,-38.2,-4,1,0.44,Level,L
+Mundial 2022,Eliminación,3869117,Netherlands,United States,36.9,4,2,0.494,2,-26.2,1,0,0.072,Lead,W
+Mundial 2022,Eliminación,3869117,United States,Netherlands,63.1,3,2,0.422,0,26.2,-1,0,-0.072,Trail,L
+Mundial 2022,Grupos,3857259,Cameroon,Serbia,43.1,7,3,1.212,1,-13.8,-1,1,0.794,Trail,D
+Mundial 2022,Grupos,3857259,Serbia,Cameroon,56.9,8,2,0.418,2,13.8,1,-1,-0.794,Lead,D
+Mundial 2022,Grupos,3857291,Spain,Costa Rica,84.2,7,3,1.787,3,68.4,7,3,1.787,Lead,W
+Mundial 2022,Grupos,3857291,Costa Rica,Spain,15.8,0,0,0.0,0,-68.4,-7,-3,-1.787,Trail,L
+Mundial 2022,Grupos,3857300,Argentina,Saudi Arabia,63.4,5,2,1.087,1,26.8,5,2,1.087,Lead,L
+Mundial 2022,Grupos,3857300,Saudi Arabia,Argentina,36.6,0,0,0.0,0,-26.8,-5,-2,-1.087,Trail,W
+Mundial 2022,Grupos,3857286,Qatar,Ecuador,45.3,2,0,0.219,0,-9.4,-1,-2,-0.711,Trail,L
+Mundial 2022,Grupos,3857286,Ecuador,Qatar,54.7,3,2,0.93,2,9.4,1,2,0.711,Lead,W
+Mundial 2022,Grupos,3857293,Ghana,Uruguay,43.3,3,2,0.897,0,-13.4,-2,-1,-0.445,Trail,L
+Mundial 2022,Grupos,3857293,Uruguay,Ghana,56.7,5,3,1.342,2,13.4,2,1,0.445,Lead,W
+Mundial 2022,Grupos,3857280,Cameroon,Brazil,32.3,1,1,0.118,0,-35.4,-9,-2,-0.746,Level,W
+Mundial 2022,Grupos,3857280,Brazil,Cameroon,67.7,10,3,0.864,0,35.4,9,2,0.746,Level,L
+Mundial 2022,Grupos,3857279,France,Australia,60.0,11,2,2.108,2,20.0,7,1,1.785,Lead,W
+Mundial 2022,Grupos,3857279,Australia,France,40.0,4,1,0.323,1,-20.0,-7,-1,-1.785,Trail,L
+Euro 2024,Grupos,3930166,Portugal,Czech Republic,75.1,9,3,0.887,0,50.2,8,3,0.827,Level,D
+Euro 2024,Grupos,3930166,Czech Republic,Portugal,24.9,1,0,0.061,0,-50.2,-8,-3,-0.827,Level,D
+Mundial 2022,Grupos,3857299,South Korea,Ghana,59.8,6,0,0.267,0,19.6,3,-2,-0.552,Trail,L
+Mundial 2022,Grupos,3857299,Ghana,South Korea,40.2,3,2,0.82,2,-19.6,-3,2,0.552,Lead,W
+Euro 2024,Grupos,3930163,Serbia,England,45.0,2,0,0.133,0,-10.0,-1,-1,-0.236,Trail,L
+Euro 2024,Grupos,3930163,England,Serbia,55.0,3,1,0.368,1,10.0,1,1,0.236,Lead,W
+Mundial 2022,Grupos,3857262,South Korea,Portugal,44.3,5,3,0.721,1,-11.4,-5,-3,-0.157,Level,W
+Mundial 2022,Grupos,3857262,Portugal,South Korea,55.7,10,6,0.879,1,11.4,5,3,0.157,Level,L
+Euro 2024,Grupos,3930181,England,Slovenia,68.6,6,2,0.53,0,37.2,3,1,0.393,Level,D
+Euro 2024,Grupos,3930181,Slovenia,England,31.4,3,1,0.137,0,-37.2,-3,-1,-0.393,Level,D
+Euro 2024,Grupos,3930170,Slovenia,Serbia,45.6,9,2,1.182,0,-8.8,3,0,0.618,Level,D
+Euro 2024,Grupos,3930170,Serbia,Slovenia,54.4,6,2,0.564,0,8.8,-3,0,-0.618,Level,D
+Mundial 2022,Grupos,3857281,Croatia,Canada,55.3,5,4,1.024,2,10.6,4,3,0.943,Lead,W
+Mundial 2022,Grupos,3857281,Canada,Croatia,44.7,1,1,0.081,1,-10.6,-4,-3,-0.943,Trail,L
+Euro 2024,Grupos,3930160,Spain,Croatia,44.0,6,4,0.993,3,-12.0,-1,2,0.613,Lead,W
+Euro 2024,Grupos,3930160,Croatia,Spain,56.0,7,2,0.38,0,12.0,1,-2,-0.613,Trail,L
+Euro 2024,Grupos,3930159,Hungary,Switzerland,41.0,3,1,0.284,0,-18.0,-2,-2,-0.657,Trail,L
+Euro 2024,Grupos,3930159,Switzerland,Hungary,59.0,5,3,0.941,2,18.0,2,2,0.657,Lead,W
+Euro 2024,Grupos,3938638,Romania,Ukraine,30.8,4,2,0.093,1,-38.4,0,2,-0.086,Lead,W
+Euro 2024,Grupos,3938638,Ukraine,Romania,69.2,4,0,0.179,0,38.4,0,-2,0.086,Trail,L
+Euro 2024,Grupos,3938637,Poland,Netherlands,33.0,4,2,0.153,1,-34.0,-10,-1,-0.849,Level,L
+Euro 2024,Grupos,3938637,Netherlands,Poland,67.0,14,3,1.002,1,34.0,10,1,0.849,Level,W
+Euro 2024,Grupos,3938641,Poland,Austria,40.9,8,2,1.06,1,-18.2,2,-1,0.592,Level,L
+Euro 2024,Grupos,3938641,Austria,Poland,59.1,6,3,0.468,1,18.2,-2,1,-0.592,Level,W
+Euro 2024,Grupos,3930178,Croatia,Italy,57.8,2,1,0.042,0,15.6,-4,-1,-0.36,Level,D
+Euro 2024,Grupos,3930178,Italy,Croatia,42.2,6,2,0.402,0,-15.6,4,1,0.36,Level,D
+Euro 2024,Grupos,3938642,Georgia,Czech Republic,46.6,2,1,0.796,1,-6.8,-11,-6,-0.76,Lead,D
+Euro 2024,Grupos,3938642,Czech Republic,Georgia,53.4,13,7,1.556,0,6.8,11,6,0.76,Trail,D
+Euro 2024,Eliminación,3942227,England,Switzerland,56.1,5,0,0.234,0,12.2,3,0,0.174,Level,D
+Euro 2024,Eliminación,3942227,Switzerland,England,43.9,2,0,0.06,0,-12.2,-3,0,-0.174,Level,D
+Euro 2024,Eliminación,3941019,France,Belgium,59.7,9,1,0.529,0,19.4,8,1,0.423,Level,D
+Euro 2024,Eliminación,3941019,Belgium,France,40.3,1,0,0.106,0,-19.4,-8,-1,-0.423,Level,D
+Euro 2024,Grupos,3938644,Georgia,Portugal,29.8,3,1,0.159,1,-40.4,-8,-2,-0.415,Lead,W
+Euro 2024,Grupos,3938644,Portugal,Georgia,70.2,11,3,0.574,0,40.4,8,2,0.415,Trail,L
+Euro 2024,Grupos,3938639,Turkey,Georgia,60.7,11,2,0.809,1,21.4,5,-1,0.342,Level,W
+Euro 2024,Grupos,3938639,Georgia,Turkey,39.3,6,3,0.468,1,-21.4,-5,1,-0.342,Level,L
+Euro 2024,Grupos,3938643,France,Poland,60.6,8,4,0.683,0,21.2,2,2,0.421,Level,D
+Euro 2024,Grupos,3938643,Poland,France,39.4,6,2,0.262,0,-21.2,-2,-2,-0.421,Level,D
+Euro 2024,Grupos,3930162,Slovenia,Denmark,31.1,3,0,0.066,0,-37.8,-5,-1,-0.622,Trail,D
+Euro 2024,Grupos,3930162,Denmark,Slovenia,68.9,8,1,0.688,1,37.8,5,1,0.622,Lead,D
+Euro 2024,Grupos,3938640,Slovakia,Ukraine,58.2,7,5,0.526,1,16.4,0,3,-0.076,Lead,L
+Euro 2024,Grupos,3938640,Ukraine,Slovakia,41.8,7,2,0.601,0,-16.4,0,-3,0.076,Trail,W
+Euro 2024,Grupos,3930176,Switzerland,Germany,31.7,2,1,0.228,1,-36.6,-5,0,-0.183,Lead,D
+Euro 2024,Grupos,3930176,Germany,Switzerland,68.3,7,1,0.41,0,36.6,5,0,0.183,Trail,D
+Euro 2024,Eliminación,3943043,Spain,England,68.7,5,1,0.339,0,37.4,2,0,0.061,Level,W
+Euro 2024,Eliminación,3943043,England,Spain,31.3,3,1,0.277,0,-37.4,-2,0,-0.061,Level,L
+Euro 2024,Grupos,3930174,Turkey,Portugal,39.3,6,2,0.708,0,-21.4,-2,0,0.048,Trail,L
+Euro 2024,Grupos,3930174,Portugal,Turkey,60.7,8,2,0.66,1,21.4,2,0,-0.048,Lead,W
+Euro 2024,Eliminación,3942752,Spain,France,55.4,5,2,0.367,2,10.8,2,1,-0.016,Lead,W
+Euro 2024,Eliminación,3942752,France,Spain,44.6,3,1,0.383,1,-10.8,-2,-1,0.016,Trail,L
+Euro 2024,Grupos,3930180,Netherlands,Austria,44.0,5,0,0.986,0,-12.0,-2,-3,0.24,Level,D
+Euro 2024,Grupos,3930180,Austria,Netherlands,56.0,7,3,0.746,0,12.0,2,3,-0.24,Level,D
+Euro 2024,Eliminación,3942382,Netherlands,Turkey,56.3,4,0,0.259,0,12.6,-2,-1,-0.161,Trail,D
+Euro 2024,Eliminación,3942382,Turkey,Netherlands,43.7,6,1,0.42,1,-12.6,2,1,0.161,Lead,D
+Euro 2024,Eliminación,3942819,Netherlands,England,37.7,3,1,0.152,1,-24.6,-4,-3,-0.998,Level,L
+Euro 2024,Eliminación,3942819,England,Netherlands,62.3,7,4,1.15,1,24.6,4,3,0.998,Level,W
+Euro 2024,Grupos,3930171,Denmark,England,51.2,9,4,0.273,1,2.4,3,2,-0.403,Level,D
+Euro 2024,Grupos,3930171,England,Denmark,48.8,6,2,0.676,1,-2.4,-3,-2,0.403,Level,D
+Euro 2024,Grupos,3930184,Czech Republic,Turkey,29.8,5,3,0.449,0,-40.4,-3,3,0.068,Level,L
+Euro 2024,Grupos,3930184,Turkey,Czech Republic,70.2,8,0,0.381,0,40.4,3,-3,-0.068,Level,W
+Euro 2024,Eliminación,3942349,Portugal,France,55.1,2,0,0.067,0,10.2,-1,-1,0.018,Level,D
+Euro 2024,Eliminación,3942349,France,Portugal,44.9,3,1,0.049,0,-10.2,1,1,-0.018,Level,D
+Euro 2024,Eliminación,3942226,Spain,Germany,46.5,8,4,0.383,0,-7.0,5,2,0.132,Level,D
+Euro 2024,Eliminación,3942226,Germany,Spain,53.5,3,2,0.251,0,7.0,-5,-2,-0.132,Level,D
+Euro 2024,Grupos,3930169,Scotland,Switzerland,49.4,3,2,0.232,1,-1.2,-3,-1,-0.244,Level,D
+Euro 2024,Grupos,3930169,Switzerland,Scotland,50.6,6,3,0.477,1,1.2,3,1,0.244,Level,D
+Euro 2024,Eliminación,3941022,Austria,Turkey,51.7,6,0,0.444,0,3.4,3,-1,-0.125,Trail,L
+Euro 2024,Eliminación,3941022,Turkey,Austria,48.3,3,1,0.569,1,-3.4,-3,1,0.125,Lead,W
+Euro 2024,Grupos,3938645,Ukraine,Belgium,38.7,7,3,0.295,0,-22.6,3,1,-0.02,Level,D
+Euro 2024,Grupos,3938645,Belgium,Ukraine,61.3,4,2,0.316,0,22.6,-3,-1,0.02,Level,D
+Euro 2024,Eliminación,3941021,Romania,Netherlands,28.4,4,1,0.212,0,-43.2,-4,-1,-0.217,Trail,L
+Euro 2024,Eliminación,3941021,Netherlands,Romania,71.6,8,2,0.429,1,43.2,4,1,0.217,Lead,W
+Euro 2024,Grupos,3930182,Denmark,Serbia,59.5,5,2,0.405,0,19.0,4,2,0.344,Level,D
+Euro 2024,Grupos,3930182,Serbia,Denmark,40.5,1,0,0.062,0,-19.0,-4,-2,-0.344,Level,D
+Euro 2024,Eliminación,3941020,Portugal,Slovenia,65.5,5,1,0.278,0,31.0,3,0,0.21,Level,D
+Euro 2024,Eliminación,3941020,Slovenia,Portugal,34.5,2,1,0.068,0,-31.0,-3,0,-0.21,Level,D
+Euro 2024,Eliminación,3940878,Switzerland,Italy,58.1,10,3,0.565,1,16.2,9,3,0.505,Lead,W
+Euro 2024,Eliminación,3940878,Italy,Switzerland,41.9,1,0,0.06,0,-16.2,-9,-3,-0.505,Trail,L
+Euro 2024,Eliminación,3941017,England,Slovakia,76.9,6,0,0.281,0,53.8,2,-1,-0.472,Trail,D
+Euro 2024,Eliminación,3941017,Slovakia,England,23.1,4,1,0.753,1,-53.8,-2,1,0.472,Lead,D
+Euro 2024,Eliminación,3941018,Spain,Georgia,78.3,17,6,0.808,1,56.6,15,6,0.753,Lead,W
+Euro 2024,Eliminación,3941018,Georgia,Spain,21.7,2,0,0.055,0,-56.6,-15,-6,-0.753,Trail,L
+Euro 2024,Grupos,3930177,Scotland,Hungary,61.4,0,0,0.0,0,22.8,-5,-1,-0.244,Level,L
+Euro 2024,Grupos,3930177,Hungary,Scotland,38.6,5,1,0.244,0,-22.8,5,1,0.244,Level,W
+Euro 2024,Grupos,3930173,Netherlands,France,39.4,5,3,0.277,0,-21.2,0,1,0.004,Level,D
+Euro 2024,Grupos,3930173,France,Netherlands,60.6,5,2,0.273,0,21.2,0,-1,-0.004,Level,D
+Euro 2024,Grupos,3930179,Albania,Spain,40.4,1,1,0.028,0,-19.2,-8,-1,-0.468,Trail,L
+Euro 2024,Grupos,3930179,Spain,Albania,59.6,9,2,0.496,1,19.2,8,1,0.468,Lead,W
+Euro 2024,Grupos,3930172,Spain,Italy,60.6,9,4,0.679,0,21.2,8,4,0.651,Level,D
+Euro 2024,Grupos,3930172,Italy,Spain,39.4,1,0,0.029,0,-21.2,-8,-4,-0.651,Level,D
+Euro 2024,Grupos,3930168,Germany,Hungary,71.4,8,3,0.663,1,42.8,1,1,0.01,Lead,W
+Euro 2024,Grupos,3930168,Hungary,Germany,28.6,7,2,0.653,0,-42.8,-1,-1,-0.01,Trail,L
+Euro 2024,Eliminación,3940983,Germany,Denmark,61.7,8,5,0.439,0,23.4,2,4,-0.417,Level,W
+Euro 2024,Eliminación,3940983,Denmark,Germany,38.3,6,1,0.856,0,-23.4,-2,-4,0.417,Level,L
+Euro 2024,Grupos,3930167,Croatia,Albania,69.8,5,1,0.278,0,39.6,-2,-2,-0.554,Trail,L
+Euro 2024,Grupos,3930167,Albania,Croatia,30.2,7,3,0.833,1,-39.6,2,2,0.554,Lead,W
+Euro 2024,Grupos,3930164,Belgium,Slovakia,52.3,6,2,0.904,0,4.6,0,-2,0.398,Trail,L
+Euro 2024,Grupos,3930164,Slovakia,Belgium,47.7,6,4,0.506,1,-4.6,0,2,-0.398,Lead,W
+Euro 2024,Grupos,3930165,Austria,France,46.9,2,1,0.509,0,-6.2,-3,0,0.235,Level,D
+Euro 2024,Grupos,3930165,France,Austria,53.1,5,1,0.274,0,6.2,3,0,-0.235,Level,D
+Euro 2024,Grupos,3930183,Slovakia,Romania,55.2,9,2,0.675,1,10.4,2,-2,-0.336,Level,D
+Euro 2024,Grupos,3930183,Romania,Slovakia,44.8,7,4,1.01,1,-10.4,-2,2,0.336,Level,D
+Euro 2024,Grupos,3930161,Italy,Albania,71.5,13,4,1.292,2,43.0,9,3,1.11,Lead,W
+Euro 2024,Grupos,3930161,Albania,Italy,28.5,4,1,0.182,1,-43.0,-9,-3,-1.11,Trail,L
+Euro 2024,Grupos,3930175,Belgium,Romania,68.4,10,4,0.595,1,36.8,4,2,0.258,Lead,W
+Euro 2024,Grupos,3930175,Romania,Belgium,31.6,6,2,0.337,0,-36.8,-4,-2,-0.258,Trail,L
+Euro 2020,Grupos,3788758,Ukraine,North Macedonia,61.9,10,5,1.725,2,23.8,7,5,1.489,Lead,W
+Euro 2020,Grupos,3788758,North Macedonia,Ukraine,38.1,3,0,0.236,0,-23.8,-7,-5,-1.489,Trail,L
+Euro 2024,Grupos,3930158,Germany,Scotland,68.2,5,5,1.085,3,36.4,5,5,1.085,Lead,W
+Euro 2024,Grupos,3930158,Scotland,Germany,31.8,0,0,0.0,0,-36.4,-5,-5,-1.085,Trail,L
+Euro 2020,Grupos,3788765,Switzerland,Turkey,47.9,10,4,0.654,2,-4.2,-2,0,0.112,Lead,W
+Euro 2020,Grupos,3788765,Turkey,Switzerland,52.1,12,4,0.542,0,4.2,2,0,-0.112,Trail,L
+Euro 2020,Grupos,3788773,Portugal,France,50.5,7,4,1.193,1,1.0,3,2,0.219,Level,D
+Euro 2020,Grupos,3788773,France,Portugal,49.5,4,2,0.974,1,-1.0,-3,-2,-0.219,Level,D
+Euro 2020,Grupos,3788761,Sweden,Slovakia,39.8,2,1,0.089,0,-20.4,-1,1,-0.111,Level,W
+Euro 2020,Grupos,3788761,Slovakia,Sweden,60.2,3,0,0.201,0,20.4,1,-1,0.111,Level,L
+Euro 2020,Eliminación,3794687,Belgium,Portugal,49.2,4,1,0.154,1,-1.6,-4,0,-0.155,Lead,W
+Euro 2020,Eliminación,3794687,Portugal,Belgium,50.8,8,1,0.31,0,1.6,4,0,0.155,Trail,L
+Euro 2020,Grupos,3788760,Croatia,Czech Republic,48.9,4,1,0.445,0,-2.2,-2,0,-1.024,Trail,D
+Euro 2020,Grupos,3788760,Czech Republic,Croatia,51.1,6,1,1.468,1,2.2,2,0,1.024,Lead,D
+Euro 2020,Eliminación,3795108,Switzerland,Spain,29.9,4,0,0.193,0,-40.2,1,-1,0.024,Level,W
+Euro 2020,Eliminación,3795108,Spain,Switzerland,70.1,3,1,0.17,0,40.2,-1,1,-0.024,Level,L
+Euro 2020,Eliminación,3794685,Italy,Austria,54.2,12,2,0.595,0,8.4,11,2,0.527,Level,D
+Euro 2020,Eliminación,3794685,Austria,Italy,45.8,1,0,0.069,0,-8.4,-11,-2,-0.527,Level,D
+Euro 2020,Eliminación,3794692,Sweden,Ukraine,50.8,6,2,0.417,1,1.6,1,0,-0.02,Level,D
+Euro 2020,Eliminación,3794692,Ukraine,Sweden,49.2,5,2,0.437,1,-1.6,-1,0,0.02,Level,D
+Euro 2020,Grupos,3788763,Hungary,France,31.7,3,2,0.398,1,-36.6,-4,1,-0.305,Lead,D
+Euro 2020,Grupos,3788763,France,Hungary,68.3,7,1,0.704,0,36.6,4,-1,0.305,Trail,D
+Euro 2020,Eliminación,3794690,Netherlands,Czech Republic,55.5,5,0,0.813,0,11.0,0,-1,0.331,Level,L
+Euro 2020,Eliminación,3794690,Czech Republic,Netherlands,44.5,5,1,0.482,0,-11.0,0,1,-0.331,Level,W
+Euro 2020,Eliminación,3794689,Wales,Denmark,39.0,7,1,0.288,0,-22.0,2,-2,-0.401,Trail,L
+Euro 2020,Eliminación,3794689,Denmark,Wales,61.0,5,3,0.69,1,22.0,-2,2,0.401,Lead,W
+Euro 2020,Eliminación,3795107,Belgium,Italy,46.2,6,3,1.035,1,-7.6,-3,0,0.264,Trail,L
+Euro 2020,Eliminación,3795107,Italy,Belgium,53.8,9,3,0.771,2,7.6,3,0,-0.264,Lead,W
+Euro 2020,Eliminación,3795187,Ukraine,England,46.9,5,1,0.297,0,-6.2,0,-1,-0.273,Trail,L
+Euro 2020,Eliminación,3795187,England,Ukraine,53.1,5,2,0.57,1,6.2,0,1,0.273,Lead,W
+Euro 2020,Grupos,3788769,Russia,Denmark,31.2,4,1,0.284,0,-37.6,1,0,0.16,Trail,L
+Euro 2020,Grupos,3788769,Denmark,Russia,68.8,3,1,0.125,1,37.6,-1,0,-0.16,Lead,W
+Euro 2020,Eliminación,3795220,Italy,Spain,35.9,1,0,0.042,0,-28.2,-4,-1,-0.389,Level,D
+Euro 2020,Eliminación,3795220,Spain,Italy,64.1,5,1,0.432,0,28.2,4,1,0.389,Level,D
+Euro 2020,Eliminación,3794686,Croatia,Spain,28.6,2,0,0.101,0,-42.8,-9,-4,-0.789,Trail,L
+Euro 2020,Eliminación,3794686,Spain,Croatia,71.4,11,4,0.891,1,42.8,9,4,0.789,Lead,W
+Euro 2020,Eliminación,3795506,Italy,England,64.9,6,1,0.306,0,29.8,5,0,0.152,Trail,D
+Euro 2020,Eliminación,3795506,England,Italy,35.1,1,1,0.154,1,-29.8,-5,0,-0.152,Lead,D
+Euro 2020,Grupos,3788766,Italy,Wales,64.9,10,3,1.131,1,29.8,8,2,1.051,Lead,W
+Euro 2020,Grupos,3788766,Wales,Italy,35.1,2,1,0.08,0,-29.8,-8,-2,-1.051,Trail,L
+Euro 2020,Grupos,3788755,Turkey,Wales,56.8,7,1,0.392,0,13.6,1,-1,-0.805,Trail,L
+Euro 2020,Grupos,3788755,Wales,Turkey,43.2,6,2,1.197,1,-13.6,-1,1,0.805,Lead,W
+Euro 2020,Grupos,3788764,Portugal,Germany,36.6,3,1,1.046,1,-26.8,-6,-4,0.127,Lead,D
+Euro 2020,Grupos,3788764,Germany,Portugal,63.4,9,5,0.919,0,26.8,6,4,-0.127,Trail,D
+Euro 2020,Eliminación,3795109,Czech Republic,Denmark,52.0,7,2,0.641,0,4.0,0,-2,-0.074,Trail,L
+Euro 2020,Eliminación,3795109,Denmark,Czech Republic,48.0,7,4,0.714,2,-4.0,0,2,0.074,Lead,W
+Euro 2020,Grupos,3788762,Spain,Poland,78.6,6,2,0.859,1,57.2,2,1,0.484,Lead,D
+Euro 2020,Grupos,3788762,Poland,Spain,21.4,4,1,0.375,0,-57.2,-2,-1,-0.484,Trail,D
+Euro 2020,Grupos,3788754,Italy,Switzerland,52.4,7,1,1.277,1,4.8,6,1,1.27,Lead,W
+Euro 2020,Grupos,3788754,Switzerland,Italy,47.6,1,0,0.007,0,-4.8,-6,-1,-1.27,Trail,L
+Euro 2020,Eliminación,3794688,England,Germany,53.4,3,2,0.227,0,6.8,0,0,-0.03,Level,W
+Euro 2020,Eliminación,3794688,Germany,England,46.6,3,2,0.257,0,-6.8,0,0,0.03,Level,L
+Euro 2020,Grupos,3788747,Austria,North Macedonia,60.2,4,3,0.35,1,20.4,2,2,-0.128,Level,W
+Euro 2020,Grupos,3788747,North Macedonia,Austria,39.8,2,1,0.478,1,-20.4,-2,-2,0.128,Level,L
+Euro 2020,Grupos,3788772,Czech Republic,England,40.7,5,1,0.294,0,-18.6,-1,-2,-0.349,Trail,L
+Euro 2020,Grupos,3788772,England,Czech Republic,59.3,6,3,0.642,1,18.6,1,2,0.349,Lead,W
+Euro 2020,Grupos,3788774,Germany,Hungary,73.7,8,2,0.669,0,47.4,4,0,0.286,Trail,D
+Euro 2020,Grupos,3788774,Hungary,Germany,26.3,4,2,0.384,1,-47.4,-4,0,-0.286,Lead,D
+Euro 2020,Grupos,3788741,Turkey,Italy,33.4,0,0,0.0,0,-33.2,-14,-3,-0.717,Level,L
+Euro 2020,Grupos,3788741,Italy,Turkey,66.6,14,3,0.717,0,33.2,14,3,0.717,Level,W
+Euro 2020,Grupos,3788768,Finland,Belgium,37.5,0,0,0.0,0,-25.0,-7,-3,-0.492,Level,L
+Euro 2020,Grupos,3788768,Belgium,Finland,62.5,7,3,0.492,0,25.0,7,3,0.492,Level,W
+Euro 2020,Grupos,3788770,North Macedonia,Netherlands,45.9,6,0,0.292,0,-8.2,0,-2,-0.687,Trail,L
+Euro 2020,Grupos,3788770,Netherlands,North Macedonia,54.1,6,2,0.979,1,8.2,0,2,0.687,Lead,W
+Euro 2020,Grupos,3788753,Finland,Russia,30.7,3,0,0.39,0,-38.6,-4,-2,-0.314,Trail,L
+Euro 2020,Grupos,3788753,Russia,Finland,69.3,7,2,0.705,1,38.6,4,2,0.314,Lead,W
+Euro 2020,Grupos,3788759,England,Scotland,59.2,4,0,0.625,0,18.4,-1,-1,0.316,Level,D
+Euro 2020,Grupos,3788759,Scotland,England,40.8,5,1,0.309,0,-18.4,1,1,-0.316,Level,D
+Euro 2020,Grupos,3788771,Croatia,Scotland,70.3,6,2,0.166,1,40.6,3,0,-0.026,Level,W
+Euro 2020,Grupos,3788771,Scotland,Croatia,29.7,3,2,0.192,1,-40.6,-3,0,0.026,Level,L
+Euro 2020,Grupos,3788745,England,Croatia,58.4,4,1,0.243,0,16.8,2,1,0.163,Level,W
+Euro 2020,Grupos,3788745,Croatia,England,41.6,2,0,0.08,0,-16.8,-2,-1,-0.163,Level,L
+Euro 2020,Eliminación,3795221,England,Denmark,61.5,4,2,0.692,0,23.0,0,0,0.46,Trail,L
+Euro 2020,Eliminación,3795221,Denmark,England,38.5,4,2,0.233,1,-23.0,0,0,-0.46,Lead,W
+Euro 2020,Grupos,3788767,Ukraine,Austria,46.8,1,1,0.058,0,-6.4,-12,-2,-1.233,Trail,L
+Euro 2020,Grupos,3788767,Austria,Ukraine,53.2,13,3,1.292,1,6.4,12,2,1.233,Lead,W
+Euro 2020,Grupos,3788746,Netherlands,Ukraine,59.5,10,3,0.902,0,19.0,6,1,0.504,Level,W
+Euro 2020,Grupos,3788746,Ukraine,Netherlands,40.5,4,2,0.398,0,-19.0,-6,-1,-0.504,Level,L
+Euro 2020,Grupos,3788757,Denmark,Belgium,47.7,9,3,0.929,1,-4.6,8,2,0.79,Lead,L
+Euro 2020,Grupos,3788757,Belgium,Denmark,52.3,1,1,0.139,0,4.6,-8,-2,-0.79,Trail,W
+Euro 2020,Grupos,3788756,Netherlands,Austria,50.3,6,1,1.68,1,0.6,4,1,1.627,Lead,W
+Euro 2020,Grupos,3788756,Austria,Netherlands,49.7,2,0,0.053,0,-0.6,-4,-1,-1.627,Trail,L
+Euro 2020,Grupos,3788750,Spain,Sweden,83.6,9,3,1.083,0,67.2,6,3,0.895,Level,D
+Euro 2020,Grupos,3788750,Sweden,Spain,16.4,3,0,0.188,0,-67.2,-6,-3,-0.895,Level,D
+Euro 2020,Eliminación,3794691,France,Switzerland,53.1,7,0,0.343,0,6.2,2,-1,-0.134,Trail,D
+Euro 2020,Eliminación,3794691,Switzerland,France,46.9,5,1,0.477,1,-6.2,-2,1,0.134,Lead,D
+Euro 2020,Grupos,3788748,Scotland,Czech Republic,50.5,6,1,0.402,0,1.0,2,-1,0.214,Trail,L
+Euro 2020,Grupos,3788748,Czech Republic,Scotland,49.5,4,2,0.188,1,-1.0,-2,1,-0.214,Lead,W
+Euro 2020,Grupos,3788752,Hungary,Portugal,33.3,1,1,0.036,0,-33.4,-4,-1,-0.901,Level,L
+Euro 2020,Grupos,3788752,Portugal,Hungary,66.7,5,2,0.937,0,33.4,4,1,0.901,Level,W
+Euro 2020,Grupos,3788776,Sweden,Poland,35.4,1,1,0.177,1,-29.2,-5,0,-0.471,Lead,W
+Euro 2020,Grupos,3788776,Poland,Sweden,64.6,6,1,0.648,0,29.2,5,0,0.471,Trail,L
+Euro 2020,Grupos,3788751,France,Germany,41.8,2,1,0.257,0,-16.4,-4,1,-0.3,Level,D
+Euro 2020,Grupos,3788751,Germany,France,58.2,6,0,0.557,0,16.4,4,-1,0.3,Level,D
+Euro 2020,Grupos,3788749,Poland,Slovakia,60.2,7,0,0.328,0,20.4,-1,-1,0.102,Level,D
+Euro 2020,Grupos,3788749,Slovakia,Poland,39.8,8,1,0.226,0,-20.4,1,1,-0.102,Level,D
+Euro 2020,Grupos,3788775,Slovakia,Spain,34.0,0,0,0.0,0,-32.0,-13,-6,-1.861,Trail,L
+Euro 2020,Grupos,3788775,Spain,Slovakia,66.0,13,6,1.861,1,32.0,13,6,1.861,Lead,W
+Euro 2020,Grupos,3788742,Denmark,Finland,62.8,12,4,0.612,0,25.6,12,4,0.612,Level,L
+Euro 2020,Grupos,3788742,Finland,Denmark,37.2,0,0,0.0,0,-25.6,-12,-4,-0.612,Level,W
+Euro 2020,Grupos,3788743,Belgium,Russia,66.5,7,3,1.176,2,33.0,5,2,1.04,Lead,W
+Euro 2020,Grupos,3788743,Russia,Belgium,33.5,2,1,0.136,0,-33.0,-5,-2,-1.04,Trail,L
+Euro 2020,Grupos,3788744,Wales,Switzerland,29.3,2,1,0.182,0,-41.4,-9,0,-0.622,Level,D
+Euro 2020,Grupos,3788744,Switzerland,Wales,70.7,11,1,0.804,0,41.4,9,0,0.622,Level,D
+Copa América 2024,Grupos,3939982,Uruguay,Bolivia,61.0,13,5,1.483,2,22.0,10,4,1.459,Lead,W
+Copa América 2024,Grupos,3939982,Bolivia,Uruguay,39.0,3,1,0.024,0,-22.0,-10,-4,-1.459,Trail,L
+Copa América 2024,Grupos,3939980,Ecuador,Jamaica,53.4,14,2,1.576,1,6.8,12,0,1.479,Lead,W
+Copa América 2024,Grupos,3939980,Jamaica,Ecuador,46.6,2,2,0.097,0,-6.8,-12,0,-1.479,Trail,L
+Copa América 2024,Grupos,3939970,Peru,Chile,35.5,3,1,0.13,0,-29.0,-1,1,-0.59,Level,D
+Copa América 2024,Grupos,3939970,Chile,Peru,64.5,4,0,0.72,0,29.0,1,-1,0.59,Level,D
+Copa América 2024,Grupos,3939991,Brazil,Colombia,44.1,3,2,0.132,1,-11.8,-5,-2,-0.698,Level,D
+Copa América 2024,Grupos,3939991,Colombia,Brazil,55.9,8,4,0.829,1,11.8,5,2,0.698,Level,D
+Copa América 2024,Grupos,3939986,Argentina,Peru,77.3,6,3,0.298,0,54.6,4,3,0.269,Level,W
+Copa América 2024,Grupos,3939986,Peru,Argentina,22.7,2,0,0.03,0,-54.6,-4,-3,-0.269,Level,L
+Copa América 2024,Grupos,3939987,Jamaica,Venezuela,49.4,6,0,0.646,0,-1.2,-1,0,0.299,Level,L
+Copa América 2024,Grupos,3939987,Venezuela,Jamaica,50.6,7,0,0.347,0,1.2,1,0,-0.299,Level,W
+Copa América 2024,Grupos,3939977,Chile,Argentina,38.4,0,0,0.0,0,-23.2,-13,-3,-0.759,Level,L
+Copa América 2024,Grupos,3939977,Argentina,Chile,61.6,13,3,0.759,0,23.2,13,3,0.759,Level,W
+Copa América 2024,Grupos,3939979,Venezuela,Mexico,45.9,3,0,0.103,0,-8.2,-5,-2,-0.649,Level,W
+Copa América 2024,Grupos,3939979,Mexico,Venezuela,54.1,8,2,0.752,0,8.2,5,2,0.649,Level,L
+Copa América 2024,Grupos,3939971,Mexico,Jamaica,63.0,7,2,0.452,0,26.0,0,1,0.148,Level,W
+Copa América 2024,Grupos,3939971,Jamaica,Mexico,37.0,7,1,0.304,0,-26.0,0,-1,-0.148,Level,L
+Copa América 2024,Grupos,3939974,United States,Bolivia,59.2,7,3,0.422,2,18.4,5,2,0.388,Lead,W
+Copa América 2024,Grupos,3939974,Bolivia,United States,40.8,2,1,0.034,0,-18.4,-5,-2,-0.388,Trail,L
+Copa América 2024,Grupos,3939975,Colombia,Paraguay,69.4,6,2,0.294,2,38.8,-1,1,-0.281,Lead,W
+Copa América 2024,Grupos,3939975,Paraguay,Colombia,30.6,7,1,0.575,0,-38.8,1,-1,0.281,Trail,L
+Copa América 2024,Grupos,3939988,Mexico,Ecuador,54.5,10,0,0.465,0,9.0,4,-2,0.265,Level,D
+Copa América 2024,Grupos,3939988,Ecuador,Mexico,45.5,6,2,0.2,0,-9.0,-4,2,-0.265,Level,D
+Copa América 2024,Grupos,3939978,Peru,Canada,51.8,5,2,0.408,0,3.6,4,2,0.301,Level,L
+Copa América 2024,Grupos,3939978,Canada,Peru,48.2,1,0,0.107,0,-3.6,-4,-2,-0.301,Level,W
+Copa América 2024,Grupos,3939983,Paraguay,Brazil,46.7,8,3,0.479,0,-6.6,-3,-1,-2.225,Trail,L
+Copa América 2024,Grupos,3939983,Brazil,Paraguay,53.3,11,4,2.703,3,6.6,3,1,2.225,Lead,W
+Copa América 2024,Grupos,3939990,United States,Uruguay,49.2,1,1,0.028,0,-1.6,-3,1,-0.417,Level,L
+Copa América 2024,Grupos,3939990,Uruguay,United States,50.8,4,0,0.445,0,1.6,3,-1,0.417,Level,W
+Copa América 2024,Grupos,3939972,Ecuador,Venezuela,39.9,7,3,0.487,1,-20.2,-3,2,-0.484,Lead,L
+Copa América 2024,Grupos,3939972,Venezuela,Ecuador,60.1,10,1,0.971,0,20.2,3,-2,0.484,Trail,W
+Copa América 2024,Grupos,3939976,Brazil,Costa Rica,75.6,9,2,0.802,0,51.2,9,2,0.802,Level,D
+Copa América 2024,Grupos,3939976,Costa Rica,Brazil,24.4,0,0,0.0,0,-51.2,-9,-2,-0.802,Level,D
+Copa América 2024,Grupos,3939992,Costa Rica,Paraguay,41.1,2,2,0.272,2,-17.8,-2,1,0.153,Lead,W
+Copa América 2024,Grupos,3939992,Paraguay,Costa Rica,58.9,4,1,0.119,0,17.8,2,-1,-0.153,Trail,L
+Copa América 2024,Eliminación,3943077,Argentina,Colombia,47.5,3,0,0.271,0,-5.0,-5,-4,-0.173,Level,D
+Copa América 2024,Eliminación,3943077,Colombia,Argentina,52.5,8,4,0.444,0,5.0,5,4,0.173,Level,D
+Copa América 2024,Grupos,3939973,Uruguay,Panama,58.8,12,5,0.803,1,17.6,9,4,0.686,Lead,W
+Copa América 2024,Grupos,3939973,Panama,Uruguay,41.2,3,1,0.117,0,-17.6,-9,-4,-0.686,Trail,L
+Copa América 2024,Eliminación,3943076,Canada,Uruguay,59.1,8,2,1.549,1,18.2,3,0,1.21,Level,D
+Copa América 2024,Eliminación,3943076,Uruguay,Canada,40.9,5,2,0.339,1,-18.2,-3,0,-1.21,Level,D
+Copa América 2024,Eliminación,3942228,Argentina,Ecuador,62.7,4,1,0.568,1,25.4,1,0,0.298,Lead,D
+Copa América 2024,Eliminación,3942228,Ecuador,Argentina,37.3,3,1,0.27,0,-25.4,-1,0,-0.298,Trail,D
+Copa América 2024,Eliminación,3942415,Uruguay,Brazil,48.6,5,0,0.381,0,-2.8,1,-2,-0.193,Level,D
+Copa América 2024,Eliminación,3942415,Brazil,Uruguay,51.4,4,2,0.574,0,2.8,-1,2,0.193,Level,D
+Copa América 2024,Eliminación,3942785,Argentina,Canada,59.5,8,1,0.86,1,19.0,4,0,0.553,Lead,W
+Copa América 2024,Eliminación,3942785,Canada,Argentina,40.5,4,1,0.307,0,-19.0,-4,0,-0.553,Trail,L
+Copa América 2024,Eliminación,3942416,Colombia,Panama,54.2,4,3,1.357,3,8.4,-3,2,0.99,Lead,W
+Copa América 2024,Eliminación,3942416,Panama,Colombia,45.8,7,1,0.368,0,-8.4,3,-2,-0.99,Trail,L
+Copa América 2024,Eliminación,3942229,Venezuela,Canada,54.8,9,1,0.593,0,9.6,2,-1,-0.137,Trail,D
+Copa América 2024,Eliminación,3942229,Canada,Venezuela,45.2,7,2,0.729,1,-9.6,-2,1,0.137,Lead,D
+Copa América 2024,Grupos,3939981,Panama,United States,71.5,7,1,0.376,1,43.0,4,-1,0.109,Level,W
+Copa América 2024,Grupos,3939981,United States,Panama,28.5,3,2,0.266,1,-43.0,-4,1,-0.109,Level,L
+Copa América 2024,Eliminación,3942852,Uruguay,Colombia,47.3,4,0,0.364,0,-5.4,-3,-3,0.015,Trail,L
+Copa América 2024,Eliminación,3942852,Colombia,Uruguay,52.7,7,3,0.349,1,5.4,3,3,-0.015,Lead,W
+Copa América 2024,Grupos,3939984,Colombia,Costa Rica,69.6,9,2,2.113,1,39.2,6,2,2.012,Lead,W
+Copa América 2024,Grupos,3939984,Costa Rica,Colombia,30.4,3,0,0.101,0,-39.2,-6,-2,-2.012,Trail,L
+Copa América 2024,Grupos,3939989,Bolivia,Panama,44.7,4,1,0.183,0,-10.6,-1,-1,-0.1,Trail,L
+Copa América 2024,Grupos,3939989,Panama,Bolivia,55.3,5,2,0.282,1,10.6,1,1,0.1,Lead,W
+Copa América 2024,Grupos,3939985,Canada,Chile,47.7,6,2,0.451,0,-4.6,4,1,0.387,Level,D
+Copa América 2024,Grupos,3939985,Chile,Canada,52.3,2,1,0.064,0,4.6,-4,-1,-0.387,Level,D
+Copa América 2024,Grupos,3939969,Argentina,Canada,65.9,7,2,0.669,0,31.8,0,1,-0.058,Level,W
+Copa América 2024,Grupos,3939969,Canada,Argentina,34.1,7,1,0.727,0,-31.8,0,-1,0.058,Level,L
