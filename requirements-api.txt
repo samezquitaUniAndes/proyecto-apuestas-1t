@@ -1,0 +1,9 @@
+# Dependencias de EJECUCIÓN de la API/tablero (imagen Docker).
+# Versiones fijadas para que el contenedor cargue model_bundle.joblib sin conflictos.
+fastapi
+uvicorn[standard]
+pandas==2.3.3
+numpy==2.4.4
+scipy==1.17.1
+scikit-learn==1.8.0
+joblib==1.5.3

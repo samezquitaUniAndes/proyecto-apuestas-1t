@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+.git/
+.gitignore
+.dvc/
+.dvcignore
+mlruns/
+mlartifacts/
+mlflow.db
+data/
+reports/
+notebooks/
+*.ipynb
+README.md
+requirements.txt
