@@ -1,0 +1,5 @@
+# Dependencias de estilo y calidad
+black>=24.0
+flake8>=7.0
+mypy>=1.8
+isort>=5.13

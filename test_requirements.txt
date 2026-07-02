@@ -1,0 +1,2 @@
+# Dependencias de prueba
+pytest>=8.0

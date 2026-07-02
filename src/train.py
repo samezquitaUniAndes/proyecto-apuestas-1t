@@ -1,42 +1,36 @@
 """
 train.py
 ------------------------------------------------------------------
-Entrena y evalúa los modelos para predecir el resultado a 90' (W/D/L)
-al entretiempo, y registra los experimentos en MLflow.
+Entrena y evalúa los modelos, registrando los experimentos en MLflow.
+Toda la configuración (características, hiperparámetros, semilla, folds)
+se lee de config.yml a través de config/core.py.
 
-Compara dos conjuntos de características:
-  - solo_marcador      -> benchmark (estado del marcador al descanso)
-  - marcador+dominio   -> benchmark + diferenciales del 1er tiempo (xG, remates, posesión)
-
-y tres modelos: regresión logística (baseline), random forest, hist gradient boosting.
-
-Validación: GroupKFold agrupando por match_id (las dos filas de un partido no se
-separan entre train/test -> evita fuga de información).
-Métrica principal: log-loss y Brier (calidad de la probabilidad); accuracy secundaria.
-
-Salida: models/model_bundle.joblib  (modelos empaquetados para la API)
-        mlruns/  (experimentos MLflow)
+Salida: models/model_bundle.joblib (modelos empaquetados para la API)
 ------------------------------------------------------------------
-Para registrar en un servidor MLflow remoto (EC2):
-    export MLFLOW_TRACKING_URI=http://<IP-EC2>:5000
 """
 import os
+
 import joblib
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import GroupKFold, cross_val_predict
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
+from sklearn.ensemble import HistGradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier, HistGradientBoostingClassifier
-from sklearn.metrics import log_loss, accuracy_score
+from sklearn.metrics import accuracy_score, log_loss
+from sklearn.model_selection import GroupKFold, cross_val_predict
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 import mlflow
 import mlflow.sklearn
 
-CAT = ["estado_ht"]
-NUM = ["pos_diff", "rem_diff", "arco_diff", "xg_diff"]
-FEATURES = {"solo_marcador": CAT, "marcador+dominio": CAT + NUM}
+from config.core import ROOT, config
+
+CAT = config.model.cat_features
+NUM = config.model.num_features
+FEATURES = {
+    "solo_marcador": config.model.features_benchmark,
+    "marcador+dominio": config.model.features_full,
+}
 
 
 def make_pipe(model, cols, scale):
@@ -48,38 +42,33 @@ def make_pipe(model, cols, scale):
 
 
 def build_models():
+    rs = config.model.random_state
     return {
-        "logistica": (lambda cols: make_pipe(LogisticRegression(max_iter=2000, C=1.0), cols, scale=True)),
-        "random_forest": (lambda cols: make_pipe(
-            RandomForestClassifier(n_estimators=300, max_depth=4, min_samples_leaf=10, random_state=42), cols, scale=False)),
-        "hist_gboost": (lambda cols: make_pipe(
-            HistGradientBoostingClassifier(max_depth=3, learning_rate=0.05, max_iter=300,
-                                           l2_regularization=1.0, random_state=42), cols, scale=False)),
+        "logistica": lambda cols: make_pipe(LogisticRegression(max_iter=2000, C=1.0), cols, True),
+        "random_forest": lambda cols: make_pipe(
+            RandomForestClassifier(**config.model.random_forest.model_dump(), random_state=rs), cols, False),
+        "hist_gboost": lambda cols: make_pipe(
+            HistGradientBoostingClassifier(**config.model.hist_gboost.model_dump(), random_state=rs), cols, False),
     }
 
 
 def evaluate(pipe, X, y, groups, labels):
-    """CV con GroupKFold -> probabilidades out-of-fold y métricas."""
-    gkf = GroupKFold(n_splits=5)
-    proba = cross_val_predict(pipe, X, y, cv=gkf, groups=groups, method="predict_proba")
+    proba = cross_val_predict(
+        pipe, X, y, cv=GroupKFold(n_splits=config.model.cv_splits),
+        groups=groups, method="predict_proba")
     ll = log_loss(y, proba, labels=labels)
-    pred = np.array(labels)[proba.argmax(1)]
-    acc = accuracy_score(y, pred)
+    acc = accuracy_score(y, np.array(labels)[proba.argmax(1)])
     Y = pd.get_dummies(pd.Categorical(y, categories=labels)).values
     brier = float(np.mean(((proba - Y) ** 2).sum(1)))
     return ll, brier, acc
 
 
 def main():
-    # --- datos ---
-    cands = ["data/processed/team_match_dataset.csv", "../data/processed/team_match_dataset.csv"]
-    path = next((p for p in cands if os.path.exists(p)), None)
-    assert path, "No se encontró el dataset. Corre primero: python src/build_dataset.py"
-    df = pd.read_csv(path)
-    y = df["resultado_ft"]
-    groups = df["match_id"]
-    labels = sorted(y.unique())          # ['D','L','W']
-    print(f"Datos: {len(df)} filas | clases {labels} | partidos {groups.nunique()}\n")
+    df = pd.read_csv(ROOT / config.app.data_file)
+    y = df[config.model.target]
+    groups = df[config.model.group_col]
+    labels = sorted(y.unique())
+    print(f"Datos: {len(df)} filas | clases {labels}\n")
 
     mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "sqlite:///mlflow.db"))
     mlflow.set_experiment("entretiempo-resultado")
@@ -93,44 +82,36 @@ def main():
             ll, brier, acc = evaluate(pipe, X, y, groups, labels)
             with mlflow.start_run(run_name=f"{model_name}__{feat_name}"):
                 mlflow.log_params({"modelo": model_name, "features": feat_name,
-                                   "n_features": len(cols), "cv": "GroupKFold(5) por match_id"})
+                                   "cv_splits": config.model.cv_splits})
                 mlflow.log_metrics({"cv_logloss": ll, "cv_brier": brier, "cv_accuracy": acc})
-                pipe.fit(X, y)                        # refit en todo el set
+                pipe.fit(X, y)
                 mlflow.sklearn.log_model(pipe, name="model")
             fitted[(feat_name, model_name)] = pipe
             results.append({"features": feat_name, "modelo": model_name,
                             "logloss": ll, "brier": brier, "accuracy": acc})
 
     res = pd.DataFrame(results).sort_values(["features", "logloss"]).reset_index(drop=True)
-    print("=== Resultados (validación cruzada GroupKFold, menor logloss = mejor) ===")
+    print("=== Resultados (GroupKFold, menor logloss = mejor) ===")
     print(res.to_string(index=False, float_format=lambda v: f"{v:.4f}"))
 
-    # --- mejor de cada conjunto ---
     best_full = res[res.features == "marcador+dominio"].iloc[0]
     best_bench = res[res.features == "solo_marcador"].iloc[0]
     mfull = fitted[("marcador+dominio", best_full.modelo)]
     mbench = fitted[("solo_marcador", best_bench.modelo)]
-    mejora = best_bench.logloss - best_full.logloss
-    print(f"\nMejor con dominio : {best_full.modelo}  (logloss {best_full.logloss:.4f})")
-    print(f"Mejor solo marcador: {best_bench.modelo}  (logloss {best_bench.logloss:.4f})")
-    print(f"Mejora del logloss al añadir dominio: {mejora:+.4f}  "
-          f"({'las métricas de dominio ayudan' if mejora > 0 else 'no aportan'})")
 
-    # --- escenario 'dominio engañoso' ---
-    scen = pd.DataFrame([{"estado_ht": "Level", "pos_diff": 16.0, "rem_diff": 4, "arco_diff": 2, "xg_diff": 0.6}])
-    p = mfull.predict_proba(scen[FEATURES["marcador+dominio"]])[0]
-    pw = p[labels.index("W")]
-    print(f"\nEscenario 'dominó sin ir ganando' (xg_diff=+0.6, empatando):")
-    print(f"  P(gana)={pw:.2f} | P(NO gana)={1-pw:.2f}  -> el modelo confirma que dominar no basta.")
-
-    # --- empaquetar para la API ---
-    os.makedirs("models", exist_ok=True)
-    bundle = {"model_full": mfull, "model_bench": mbench, "labels": labels,
-              "features_full": FEATURES["marcador+dominio"], "features_bench": FEATURES["solo_marcador"],
-              "meta": {"best_full": best_full.modelo, "best_bench": best_bench.modelo,
-                       "deceptive_winrate": 0.29, "threshold": 0.10}}
-    joblib.dump(bundle, "models/model_bundle.joblib")
-    print("\nOK -> models/model_bundle.joblib | experimentos en MLflow")
+    os.makedirs(ROOT / "models", exist_ok=True)
+    bundle = {
+        "model_full": mfull, "model_bench": mbench, "labels": labels,
+        "features_full": config.model.features_full,
+        "features_bench": config.model.features_benchmark,
+        "meta": {"best_full": best_full.modelo, "best_bench": best_bench.modelo,
+                 "deceptive_winrate": config.model.deceptive_winrate,
+                 "threshold": config.model.threshold},
+    }
+    joblib.dump(bundle, ROOT / "models" / "model_bundle.joblib")
+    print(f"\nMejor con dominio: {best_full.modelo} (logloss {best_full.logloss:.4f}) | "
+          f"solo marcador: {best_bench.modelo} (logloss {best_bench.logloss:.4f})")
+    print("OK -> models/model_bundle.joblib")
 
 
 if __name__ == "__main__":

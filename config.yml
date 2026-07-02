@@ -1,0 +1,48 @@
+# Configuración del proyecto — Predicción del resultado al entretiempo
+# Los hiperparámetros y las características viven aquí (no en el código),
+# y se validan por tipo con pydantic al cargar (config/core.py).
+
+package_name: prediccion-entretiempo
+
+# Datos
+data_file: data/processed/team_match_dataset.csv
+target: resultado_ft
+group_col: match_id
+
+# Características
+cat_features:
+  - estado_ht
+num_features:
+  - pos_diff
+  - rem_diff
+  - arco_diff
+  - xg_diff
+
+# Conjuntos comparados
+features_benchmark:
+  - estado_ht
+features_full:
+  - estado_ht
+  - pos_diff
+  - rem_diff
+  - arco_diff
+  - xg_diff
+
+# Validación
+cv_splits: 5
+random_state: 42
+
+# Hiperparámetros de los modelos
+random_forest:
+  n_estimators: 300
+  max_depth: 4
+  min_samples_leaf: 10
+hist_gboost:
+  max_depth: 3
+  learning_rate: 0.05
+  max_iter: 300
+  l2_regularization: 1.0
+
+# Regla de negocio (dominio engañoso)
+deceptive_winrate: 0.29
+threshold: 0.10
