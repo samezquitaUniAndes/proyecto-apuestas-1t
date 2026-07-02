@@ -1,0 +1,380 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veredicto al Entretiempo · Tablero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B1020; --bg2:#0E1530; --surface:#141C38; --surface2:#1B2547;
+    --border:#28335C; --line:#202B52;
+    --text:#EAEFFB; --muted:#97A2C2; --faint:#6A769C;
+    --win:#35D6A4; --draw:#BFC8E0; --loss:#FF6B7A; --warn:#FFC14D; --accent:#6E8BFF;
+    --display:'Oswald',system-ui,sans-serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(110,139,255,.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(53,214,164,.07), transparent 55%),
+      var(--bg);
+    color:var(--text);font-family:var(--body);line-height:1.5;
+    -webkit-font-smoothing:antialiased;padding:22px 18px 40px;
+  }
+  .wrap{max-width:1080px;margin:0 auto}
+
+  /* Header */
+  header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .brand .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .brand h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,4.6vw,40px);line-height:.98;letter-spacing:.5px;margin:0;text-transform:uppercase}
+  .brand h1 b{color:var(--accent);font-weight:700}
+  .brand p{margin:6px 0 0;color:var(--muted);font-size:13px;max-width:48ch}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--warn);border:1px solid rgba(255,193,77,.4);background:rgba(255,193,77,.08);padding:5px 9px;border-radius:6px;white-space:nowrap}
+
+  /* Grid */
+  .grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:16px}
+  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+
+  .card{background:linear-gradient(180deg,var(--surface),var(--bg2));border:1px solid var(--border);border-radius:14px;padding:16px 16px 18px}
+  .card h2{font-family:var(--display);text-transform:uppercase;letter-spacing:.6px;font-size:13px;font-weight:600;color:var(--muted);margin:0 0 14px;display:flex;align-items:center;gap:8px}
+  .card h2 .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(110,139,255,.15)}
+
+  /* Inputs */
+  .field{margin-bottom:15px}
+  .field label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:7px;font-weight:500}
+  .field label b{font-family:var(--mono);color:var(--text);font-weight:600}
+
+  .scoreline{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:12px}
+  .team-col{display:flex;flex-direction:column;align-items:center;gap:7px;flex:1}
+  .team-col .nm{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
+  .team-col .nm.a{color:var(--accent)}
+  .stepper{display:flex;align-items:center;gap:8px}
+  .stepper button{width:26px;height:26px;border-radius:7px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:16px;cursor:pointer;line-height:1;display:grid;place-items:center}
+  .stepper button:hover{border-color:var(--accent)}
+  .stepper .val{font-family:var(--display);font-size:30px;min-width:24px;text-align:center;font-weight:600}
+  .vs{font-family:var(--mono);color:var(--faint);font-size:11px;align-self:center;padding-top:18px}
+
+  .seg{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:3px;gap:3px}
+  .seg button{flex:1;border:0;background:transparent;color:var(--muted);font-size:12px;font-weight:600;padding:7px;border-radius:6px;cursor:pointer;font-family:var(--body)}
+  .seg button.on{background:var(--surface2);color:var(--text)}
+
+  input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:5px;background:var(--line);outline:none;margin:4px 0}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);cursor:pointer}
+  input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);cursor:pointer}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .mini{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:9px 10px}
+  .mini .k{font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.08em}
+  .mini .row{display:flex;align-items:center;justify-content:space-between;margin-top:5px}
+  .mini .row span{font-size:11px;color:var(--muted)}
+  .mini .row span.a{color:var(--accent)}
+  .mini input{width:48px;background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:4px 6px;font-family:var(--mono);font-size:12px;text-align:right}
+
+  /* Verdict (signature) */
+  .verdict{border:1px solid var(--border);border-radius:13px;padding:16px;position:relative;overflow:hidden;transition:border-color .25s}
+  .verdict::before{content:"";position:absolute;inset:0;opacity:0}
+  .verdict .inner{position:relative}
+  .verdict .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:4px 8px;border-radius:5px;display:inline-block}
+  .verdict .vtitle{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:clamp(22px,3.6vw,30px);letter-spacing:.5px;margin:11px 0 6px;line-height:1}
+  .verdict .vsub{font-size:13px;color:var(--text);opacity:.92;max-width:52ch}
+  .verdict .stat{margin-top:12px;display:flex;align-items:baseline;gap:9px;font-family:var(--mono)}
+  .verdict .stat .big{font-family:var(--display);font-size:34px;font-weight:700;line-height:1}
+  .verdict .stat .lbl{font-size:11.5px;color:var(--muted)}
+
+  /* Probability bars */
+  .probwrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  @media (max-width:560px){.probwrap{grid-template-columns:1fr}}
+  .probcard{background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:13px}
+  .probcard .ph{font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:11px;display:flex;align-items:center;gap:7px}
+  .probcard .ph .pill{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:4px;background:var(--surface2);color:var(--faint)}
+  .probcard.model .ph .pill{background:rgba(110,139,255,.16);color:var(--accent)}
+  .bar{margin-bottom:10px}
+  .bar:last-child{margin-bottom:0}
+  .bar .bl{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:5px}
+  .bar .bl .pc{font-family:var(--mono);font-weight:600}
+  .track{height:9px;background:var(--line);border-radius:6px;overflow:hidden}
+  .fill{height:100%;border-radius:6px;width:0;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+  .fill.w{background:linear-gradient(90deg,#1f9e76,var(--win))}
+  .fill.d{background:linear-gradient(90deg,#7c849c,var(--draw))}
+  .fill.l{background:linear-gradient(90deg,#c0455a,var(--loss))}
+
+  /* Odds / value */
+  .value{display:flex;align-items:center;gap:12px;margin-top:14px;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:12px 13px;flex-wrap:wrap}
+  .value .ofield{display:flex;flex-direction:column;gap:5px}
+  .value .ofield label{font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.07em}
+  .value .ofield input{width:78px;background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:7px;padding:6px 8px;font-family:var(--mono);font-size:13px;text-align:center}
+  .value .arrow{color:var(--faint);font-size:18px}
+  .value .vres{font-family:var(--mono);font-size:12.5px;font-weight:600;padding:6px 11px;border-radius:7px;flex:1;min-width:160px}
+
+  /* Context / EDA */
+  .ctx h2 .dot{background:var(--win)}
+  .edarow{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .edarow:last-child{border-bottom:0}
+  .edarow .elab{font-size:12px;color:var(--muted);width:150px;flex-shrink:0}
+  .edarow .elab b{color:var(--text)}
+  .ebar{flex:1;height:8px;background:var(--line);border-radius:5px;overflow:hidden}
+  .ebar i{display:block;height:100%;border-radius:5px}
+  .edarow .epc{font-family:var(--mono);font-size:12px;font-weight:600;width:42px;text-align:right}
+  .xgstrip{display:flex;gap:8px;margin-top:12px}
+  .xgcell{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px;text-align:center}
+  .xgcell .xv{font-family:var(--display);font-size:22px;font-weight:700}
+  .xgcell .xl{font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+
+  .note{font-size:11px;color:var(--faint);margin-top:8px;line-height:1.5}
+  footer{margin-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.04em}
+  footer .src b{color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="eyebrow">Apuestas en vivo · Al entretiempo</div>
+      <h1>¿Dominio real o <b>dominio engañoso</b>?</h1>
+      <p>Ingresa lo que pasó en el primer tiempo y compara qué tan confiable es la ventaja estadística frente a lo que ya dice el marcador.</p>
+    </div>
+    <div class="tag">Tablero en vivo · Entrega 2</div>
+  </header>
+
+  <div class="grid">
+    <!-- ENTRADA -->
+    <section class="card">
+      <h2><span class="dot"></span>Estado al descanso</h2>
+
+      <div class="field">
+        <label>Marcador (45')</label>
+        <div class="scoreline">
+          <div class="team-col">
+            <div class="nm a">EQUIPO A</div>
+            <div class="stepper">
+              <button data-step="ga" data-d="-1">–</button>
+              <div class="val" id="ga">0</div>
+              <button data-step="ga" data-d="1">+</button>
+            </div>
+          </div>
+          <div class="vs">VS</div>
+          <div class="team-col">
+            <div class="nm">EQUIPO B</div>
+            <div class="stepper">
+              <button data-step="gb" data-d="-1">–</button>
+              <div class="val" id="gb">0</div>
+              <button data-step="gb" data-d="1">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Fase del torneo</label>
+        <div class="seg" id="stage">
+          <button class="on" data-stage="grupos">Grupos</button>
+          <button data-stage="elim">Eliminación</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Posesión Equipo A <b><span id="posv">52</span>%</b></label>
+        <input type="range" id="pos" min="30" max="70" value="52">
+      </div>
+
+      <div class="two">
+        <div class="mini">
+          <div class="k">Remates (1T)</div>
+          <div class="row"><span class="a">A</span><input type="number" id="shA" value="5" min="0"></div>
+          <div class="row"><span>B</span><input type="number" id="shB" value="4" min="0"></div>
+        </div>
+        <div class="mini">
+          <div class="k">Al arco (1T)</div>
+          <div class="row"><span class="a">A</span><input type="number" id="sotA" value="2" min="0"></div>
+          <div class="row"><span>B</span><input type="number" id="sotB" value="1" min="0"></div>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:13px">
+        <label>xG del primer tiempo <b id="xgtxt">A 0.6 · B 0.5</b></label>
+        <div class="two">
+          <div>
+            <div style="font-size:10.5px;color:var(--accent);font-family:var(--mono);margin-bottom:3px">EQUIPO A</div>
+            <input type="range" id="xgA" min="0" max="2" step="0.1" value="0.6">
+          </div>
+          <div>
+            <div style="font-size:10.5px;color:var(--muted);font-family:var(--mono);margin-bottom:3px">EQUIPO B</div>
+            <input type="range" id="xgB" min="0" max="2" step="0.1" value="0.5">
+          </div>
+        </div>
+      </div>
+      <p class="note">Este panel es la entrada que el tablero envía a la <b>API</b> (<code>POST /predict</code>); las probabilidades provienen del modelo entrenado (random forest).</p>
+    </section>
+
+    <!-- RESULTADO -->
+    <section class="card" style="background:linear-gradient(180deg,var(--surface2),var(--bg2))">
+      <h2><span class="dot"></span>Veredicto para el Equipo A</h2>
+
+      <div class="verdict" id="verdict">
+        <div class="inner">
+          <span class="badge" id="vbadge">SEÑAL</span>
+          <div class="vtitle" id="vtitle">Partido abierto</div>
+          <div class="vsub" id="vsub">Sin ventaja en el marcador ni dominio claro.</div>
+          <div class="stat">
+            <span class="big" id="vbig">—</span>
+            <span class="lbl" id="vlbl">de equipos en esta situación ganaron el partido (Qatar 2022)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="probwrap">
+        <div class="probcard model">
+          <div class="ph">Modelo con dominio <span class="pill">_h1 + marcador</span></div>
+          <div class="bar"><div class="bl"><span>Victoria</span><span class="pc" id="mwl">—</span></div><div class="track"><div class="fill w" id="mwf"></div></div></div>
+          <div class="bar"><div class="bl"><span>Empate</span><span class="pc" id="mdl">—</span></div><div class="track"><div class="fill d" id="mdf"></div></div></div>
+          <div class="bar"><div class="bl"><span>Derrota</span><span class="pc" id="mll">—</span></div><div class="track"><div class="fill l" id="mlf"></div></div></div>
+        </div>
+        <div class="probcard">
+          <div class="ph">Solo marcador <span class="pill">benchmark</span></div>
+          <div class="bar"><div class="bl"><span>Victoria</span><span class="pc" id="bwl">—</span></div><div class="track"><div class="fill w" id="bwf"></div></div></div>
+          <div class="bar"><div class="bl"><span>Empate</span><span class="pc" id="bdl">—</span></div><div class="track"><div class="fill d" id="bdf"></div></div></div>
+          <div class="bar"><div class="bl"><span>Derrota</span><span class="pc" id="bll">—</span></div><div class="track"><div class="fill l" id="blf"></div></div></div>
+        </div>
+      </div>
+
+      <div class="value">
+        <div class="ofield">
+          <label>Cuota mercado · A gana</label>
+          <input type="number" id="odds" value="2.20" step="0.05" min="1.01">
+        </div>
+        <span class="arrow">→</span>
+        <div class="vres" id="vval">—</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CONTEXTO / EDA REAL -->
+  <section class="card ctx" style="margin-top:16px">
+    <h2><span class="dot"></span>Contexto · qué dice la historia (Mundial Qatar 2022, 64 partidos)</h2>
+    <div class="grid" style="gap:18px;align-items:start">
+      <div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:600">% que ganó el partido, según el marcador al descanso</div>
+        <div class="edarow"><div class="elab">Iba <b>ganando</b></div><div class="ebar"><i style="width:75%;background:var(--win)"></i></div><div class="epc">75%</div></div>
+        <div class="edarow"><div class="elab">Iba <b>empatando</b></div><div class="ebar"><i style="width:26%;background:var(--draw)"></i></div><div class="epc">26%</div></div>
+        <div class="edarow"><div class="elab">Iba <b>perdiendo</b></div><div class="ebar"><i style="width:6%;background:var(--loss)"></i></div><div class="epc">6%</div></div>
+        <p class="note">El marcador al descanso ya separa mucho el resultado: ese es el <b>benchmark a superar</b>.</p>
+      </div>
+      <div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:600">Diferencial de xG del 1er tiempo, promedio por resultado</div>
+        <div class="xgstrip">
+          <div class="xgcell"><div class="xv" style="color:var(--win)">+0.34</div><div class="xl">Ganó</div></div>
+          <div class="xgcell"><div class="xv" style="color:var(--draw)">0.00</div><div class="xl">Empató</div></div>
+          <div class="xgcell"><div class="xv" style="color:var(--loss)">−0.34</div><div class="xl">Perdió</div></div>
+        </div>
+        <div style="margin-top:14px;background:rgba(255,193,77,.08);border:1px solid rgba(255,193,77,.32);border-radius:10px;padding:11px 12px">
+          <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--warn)">Hallazgo · dominio engañoso</div>
+          <div style="font-size:12.5px;margin-top:5px;color:var(--text)">Equipos que <b>dominaron el xG del 1er tiempo pero no iban ganando</b> al descanso ganaron solo <b style="color:var(--warn)">29%</b> (n=58) — muy lejos del 75% de quien sí lidera el marcador.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="src">Fuente: <b>StatsBomb Open Data</b> · Mundial Qatar 2022 · cifras de contexto calculadas sobre los 64 partidos</div>
+    <div>MIIA · Entrega 1 · maqueta no funcional</div>
+  </footer>
+</div>
+
+<script>
+
+(function(){
+  const $ = id => document.getElementById(id);
+  const API = location.protocol === 'file:' ? 'http://localhost:8000' : '';
+  const state = {ga:0, gb:0};
+
+  document.querySelectorAll('[data-step]').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const k=b.dataset.step, d=+b.dataset.d;
+      state[k]=Math.max(0,Math.min(9,state[k]+d));
+      $(k).textContent=state[k];
+      render();
+    });
+  });
+  $('stage').querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      $('stage').querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on'); render();
+    });
+  });
+  let t=null;
+  const deb=()=>{clearTimeout(t); t=setTimeout(render,180);};
+  ['pos','shA','shB','sotA','sotB','xgA','xgB','odds'].forEach(id=>$(id).addEventListener('input',deb));
+
+  const pct=v=>Math.round(v*100)+'%';
+  function paint(pr, pre){
+    $(pre+'wf').style.width=pct(pr.W); $(pre+'wl').textContent=pct(pr.W);
+    $(pre+'df').style.width=pct(pr.D); $(pre+'dl').textContent=pct(pr.D);
+    $(pre+'lf').style.width=pct(pr.L); $(pre+'ll').textContent=pct(pr.L);
+  }
+
+  async function render(){
+    const pos=+$('pos').value, xgA=+$('xgA').value, xgB=+$('xgB').value;
+    const shA=+$('shA').value, shB=+$('shB').value, sotA=+$('sotA').value, sotB=+$('sotB').value;
+    $('posv').textContent=pos;
+    $('xgtxt').textContent='A '+xgA.toFixed(1)+' · B '+xgB.toFixed(1);
+    const fase = $('stage').querySelector('button.on')?.dataset.stage==='elim' ? 'Eliminación':'Grupos';
+
+    const payload={goles_a:state.ga, goles_b:state.gb, pos_a:pos, rem_a:shA, rem_b:shB,
+                   arco_a:sotA, arco_b:sotB, xg_a:xgA, xg_b:xgB, fase};
+    let data;
+    try{
+      const r=await fetch(API+'/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      data=await r.json();
+    }catch(err){
+      $('vtitle').textContent='Sin conexión con la API';
+      $('vsub').textContent='No se pudo conectar con /predict ('+err.message+'). Verifica que uvicorn esté corriendo.';
+      return;
+    }
+
+    paint(data.con_dominio,'m');
+    paint(data.solo_marcador,'b');
+    const model=data.con_dominio;
+
+    const lead=state.ga>state.gb, trail=state.ga<state.gb;
+    const eng=data.dominio_enganoso;
+    const decRate=Math.round((data.deceptive_winrate||0.29)*100);
+    const accent={win:'var(--win)',loss:'var(--loss)',warn:'var(--warn)',n:'var(--accent)'};
+    let kind,title,sub,big,badge;
+    if(lead){
+      kind='win'; badge='VENTAJA REAL'; title='Va ganando'; big='75%';
+      sub='Lidera el marcador al descanso: la situación con mayor tasa de victoria.';
+    } else if(eng && !trail){
+      kind='warn'; badge='⚠ DOMINIO ENGAÑOSO'; title='Domina, pero empata'; big=decRate+'%';
+      sub='Genera más peligro pero no lo refleja en el marcador. El mercado suele sobrevalorar a este equipo.';
+    } else if(eng && trail){
+      kind='warn'; badge='⚠ REMONTADA INCIERTA'; title='Domina y pierde'; big=decRate+'%';
+      sub='El dominio sin gol es señal débil: rara vez alcanza para dar vuelta el partido.';
+    } else if(trail){
+      kind='loss'; badge='EN DESVENTAJA'; title='Va perdiendo'; big='6%';
+      sub='Sin dominio que respalde una reacción, la probabilidad de ganar es muy baja.';
+    } else {
+      kind='n'; badge='PARTIDO ABIERTO'; title='Partido parejo'; big='26%';
+      sub='Sin ventaja en el marcador ni dominio claro: el resultado está abierto.';
+    }
+    const v=$('verdict');
+    v.style.borderColor=accent[kind];
+    v.style.background='linear-gradient(180deg, color-mix(in srgb, '+accent[kind]+' 12%, var(--surface)), var(--bg2))';
+    const be=$('vbadge'); be.textContent=badge; be.style.color=accent[kind];
+    be.style.background='color-mix(in srgb, '+accent[kind]+' 16%, transparent)';
+    $('vtitle').textContent=title; $('vtitle').style.color=accent[kind];
+    $('vsub').textContent=sub;
+    $('vbig').textContent=big; $('vbig').style.color=accent[kind];
+
+    const odds=+$('odds').value||0, imp=odds>1?1/odds:0, edge=model.W-imp, vv=$('vval');
+    if(odds<=1){vv.textContent='Ingresa una cuota válida'; vv.style.color='var(--muted)'; vv.style.background='var(--bg)';}
+    else if(edge>0.03){vv.textContent='✓ Valor a favor · modelo '+pct(model.W)+' vs implícita '+pct(imp); vv.style.color='var(--win)'; vv.style.background='rgba(53,214,164,.10)';}
+    else if(edge<-0.03){vv.textContent='✗ Sin valor · el mercado sobrevalora a A ('+pct(imp)+' vs '+pct(model.W)+')'; vv.style.color='var(--loss)'; vv.style.background='rgba(255,107,122,.10)';}
+    else {vv.textContent='≈ Cuota justa · modelo '+pct(model.W)+' ≈ implícita '+pct(imp); vv.style.color='var(--draw)'; vv.style.background='var(--bg)';}
+  }
+  render();
+})();
+
+</script>
