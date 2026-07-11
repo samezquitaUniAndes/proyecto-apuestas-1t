@@ -1,3 +1,7 @@
 mlflow.db
 mlruns/
 mlartifacts/
+.DS_Store
+**/.DS_Store
+__pycache__/
+**/__pycache__/
