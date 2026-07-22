@@ -13,10 +13,17 @@ import os
 import joblib
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import HistGradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, log_loss
+from sklearn.metrics import (
+    accuracy_score,
+    log_loss,
+    precision_score,
+    recall_score,
+    f1_score
+)
 from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
@@ -57,11 +64,57 @@ def evaluate(pipe, X, y, groups, labels):
         pipe, X, y, cv=GroupKFold(n_splits=config.model.cv_splits),
         groups=groups, method="predict_proba")
     ll = log_loss(y, proba, labels=labels)
-    acc = accuracy_score(y, np.array(labels)[proba.argmax(1)])
+    pred = np.array(labels)[proba.argmax(axis=1)]
+    acc = accuracy_score(y, pred)
+    precision = precision_score(
+    y,
+    pred,
+    average="weighted"
+    )
+    
+    recall = recall_score(
+    y,
+    pred,
+    average="weighted"
+    )
+    f1 = f1_score(
+    y,
+    pred,
+    average="weighted"
+    )
     Y = pd.get_dummies(pd.Categorical(y, categories=labels)).values
     brier = float(np.mean(((proba - Y) ** 2).sum(1)))
-    return ll, brier, acc
+    return ll, brier, acc, precision, recall, f1
 
+def plot_feature_importance(pipe, feature_names, output_path):
+    """
+    Genera la gráfica de importancia de variables para Random Forest.
+    """
+    model = pipe.named_steps["clf"]
+
+    if not hasattr(model, "feature_importances_"):
+        return
+
+    importancias = model.feature_importances_
+
+    df_imp = (
+        pd.DataFrame({
+            "Variable": feature_names,
+            "Importancia": importancias
+        })
+        .sort_values("Importancia", ascending=False)
+    )
+
+    plt.figure(figsize=(10, 6))
+    plt.barh(df_imp["Variable"], df_imp["Importancia"])
+    plt.gca().invert_yaxis()
+    plt.xlabel("Importancia")
+    plt.ylabel("Variables")
+    plt.title("Importancia de variables - Random Forest")
+    plt.tight_layout()
+
+    plt.savefig(output_path, dpi=300)
+    plt.close()
 
 def main():
     df = pd.read_csv(ROOT / config.app.data_file)
@@ -79,13 +132,31 @@ def main():
         X = df[cols]
         for model_name, factory in models.items():
             pipe = factory(cols)
-            ll, brier, acc = evaluate(pipe, X, y, groups, labels)
+            ll, brier, acc, precision, recall, f1 = evaluate(pipe,X,y,groups,labels)
             with mlflow.start_run(run_name=f"{model_name}__{feat_name}"):
                 mlflow.log_params({"modelo": model_name, "features": feat_name,
                                    "cv_splits": config.model.cv_splits})
-                mlflow.log_metrics({"cv_logloss": ll, "cv_brier": brier, "cv_accuracy": acc})
+                mlflow.log_metrics({
+                    "cv_logloss": ll,
+                    "cv_brier": brier,
+                    "cv_accuracy": acc,
+                    "cv_precision": precision,
+                    "cv_recall": recall,
+                    "cv_f1": f1
+                    })
                 pipe.fit(X, y)
-                mlflow.sklearn.log_model(pipe, name="model")
+                if model_name == "random_forest":
+                     os.makedirs(ROOT / "resultados", exist_ok=True)
+                     
+                     feature_names = pipe.named_steps["prep"].get_feature_names_out()
+                     
+                     plot_feature_importance(
+                          pipe,
+                          feature_names,
+                          ROOT / "resultados" / f"importancia_{feat_name}.png"
+                          )
+                     mlflow.sklearn.log_model(pipe, name="model")
+                
             fitted[(feat_name, model_name)] = pipe
             results.append({"features": feat_name, "modelo": model_name,
                             "logloss": ll, "brier": brier, "accuracy": acc})
